@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 14:40:03 by jhouyet           #+#    #+#              #
-#    Updated: 2023/12/27 14:41:07 by jhouyet          ###   ########.fr        #
+#    Updated: 2023/12/28 10:31:31 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ LIBFT_PATH 	= libft/
 CC			= gcc
 RM			= rm -f
 C_FLAGS		= -Wall -Wextra -Werror
+LDFLAGS 	= -lreadline
 INCS 		= -I$(INC_DIR) -I.
 
 TOTAL_FILES 	:= $(words $(SRC))
@@ -53,7 +54,7 @@ all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking objects to create executable...$(NC)"
-	@$(CC) $(OBJ) -L$(LIBFT_PATH)lib -lft $(MLX_FLAGS) -o $(NAME)
+	@$(CC) $(OBJ) -L$(LIBFT_PATH)lib -lft $(MLX_FLAGS) -o $(NAME) $(LDFLAGS)
 	@echo "$(BLUE)Executable $(NAME) created!$(NC)"
 
 $(LIBFT):
