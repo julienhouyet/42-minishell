@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:41:50 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/29 07:27:25 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/29 07:31:12 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(void)
 
 	while (1)
 	{
-		/* test */
 		entry = readline("$ ");
 		if (*entry)
 		{
