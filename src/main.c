@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:41:50 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/29 07:31:12 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/01/02 10:59:10 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 		if (*entry)
 		{
 			add_history(entry);
-			ft_printf("%s: command not found\n", entry);
+			ft_printf("%s: command not found\n\n", entry);
 		}
 		free(entry);
 	}
