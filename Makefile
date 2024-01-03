@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 14:40:03 by jhouyet           #+#    #+#              #
-#    Updated: 2023/12/28 10:31:31 by jhouyet          ###   ########.fr        #
+#    Updated: 2024/01/03 12:48:42 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC_DIR		= src/
 OBJ_DIR		= obj/
 INC_DIR		= include/
 
-SRC 		= $(wildcard $(SRC_DIR)*.c) $(wildcard $(SRC_DIR)moves/*.c)
+SRC 		= 	$(SRC_DIR)main.c \
+				$(SRC_DIR)search/search.c
+
 OBJ			= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT 		= libft/lib/libft.a
@@ -45,8 +47,7 @@ define progress_bar_minishell
 endef
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@mkdir -p $(OBJ_DIR)
-	@mkdir -p $(OBJ_DIR)/moves
+	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 	$(call progress_bar_minishell)
 
