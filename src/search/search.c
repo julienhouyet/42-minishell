@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 12:42:40 by jhouyet           #+#    #+#             */
-/*   Updated: 2024/01/03 13:52:02 by jhouyet          ###   ########.fr       */
+/*   Updated: 2024/01/04 10:08:04 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_exec_cmd(char *command_path, char **argv)
 {
 	pid_t	pid;
-	int		status;
 
 	pid = fork();
 	if (pid == 0)
@@ -29,7 +28,7 @@ void	ft_exec_cmd(char *command_path, char **argv)
 	else if (pid < 0)
 		perror("minishell");
 	else
-		waitpid(pid, &status, 0);
+		waitpid(pid, NULL, 0);
 }
 
 void	ft_search_exec_with_path(char **argv)
